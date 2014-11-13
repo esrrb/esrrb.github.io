@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- #BeginTemplate "../master.dwt" -->
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<script language="javascript" type="text/javascript">
+
+<!-- Begin
+function popUp(URL,WIDTH,HEIGHT) {
+day = new Date();
+id = day.getTime();
+//old code
+// eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=WIDTH,height=HEIGHT');");
+//eval("page" + id + " = window.open(URL, '" + id + "', "toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=" + WIDTH",height=" + HEIGHT);");
+// eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=' + WIDTH ',height=' + HEIGHT);");
+eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=1,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=1,width=' + WIDTH + ',height=' + HEIGHT);");
+
+}
+// End -->
+</script>
+
+<script type="text/javascript" src="../javascript/jquery.js"></script>
+<script type="text/javascript" src="../javascript/jcarousellite_1.0.1.js"></script>
+
+
+<!-- #BeginEditable "doctitle" -->
+<title>Laboratories</title>
+<!-- #EndEditable -->
+
+<!-- <link href="runnertest/include/style.css" rel="stylesheet" type="text/css" /> -->
+<link href="../styles/style2.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+<!-- Begin Container -->
+<div id="container">
+	<!-- Begin Masthead -->
+	<div id="masthead">
+	</div>
+	<!-- End Masthead -->
+	<!-- Begin Navigation -->
+	<div id="navigation">
+		<ul>
+			<li><a href="../index.html">Abstract</a></li>
+			<li><a href="../runnertest/Project1/output">Relational Database</a></li>
+			<li><a href="../data/default.html">Supplementary Datasets</a></li>
+			<li>
+				<ul>
+					<li><a href="../data/MicroArray.html">Transcriptome</a></li>
+					<li><a href="../data/Methylome.html">Methylome</a></li>
+					<li><a href="../data/ChIP-SeqHistone.html">Epigenome</a></li>
+					<li><a href="../data/ChIP-Seq.html">Esrrb ChIP-Seq</a></li>
+					<li><a href="../data/MicroRNA.html">miRNA Expression Profile</a></li>
+					<li><a href="../data/Proteome.html">Nuclear Proteome</a></li>
+					<li><a href="../data/integrated.html">Integrated Data</a>
+				</ul></li>
+			<li><a href="default.html">Figures</a>
+				<ul>
+					<li><a href="main_figures.html">Main Figures</a></li>
+					<li><a href="supplementary_figures.html">Supplementary Figures</a></li>
+				</ul>
+			</li>
+			<li><a href="../movies/default.html">Movies</a></li>
+			<li><a href="../tools/default.html">Tools</a></li></li>
+			<li><a href="../laboratories/default.html">Laboratories</a></li>
+		</ul>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+	</div>
+	<!-- End Navigation -->
+	<!-- Begin Content -->
+	<div id="content">
+		<!-- #BeginEditable "content" -->
+	<h2>Figures</h2>
+	<div class="image_link" style="width: 150px"><a href="javascript:popUp('figure1/figure1.html',680,720)">
+		<img alt="Click for larger image" src="figure1_thumb.png" height="170" width="150" /></a>
+		<div><a href="javascript:popUp('figure1/figure1.html',680,720)">
+		Figure 1. Dynamic changes in the epigenome, methylome, transcriptome, microRNAome and nuclear proteome after Esrrb downregulation. (view larger)</a></div>
+		</div> <!-- end image link + caption -->
+
+
+		<div class="image_link" style="width: 150px"><a href="javascript:popUp('figure2/figure2.html',740,850)">
+		<img alt="Click for larger image" src="figure2_thumb.png" height="133" width="150" /></a>
+		<div><A HREF="javascript:popUp('figure2/figure2.html',740,850)">
+		Figure 2. Meta analysis of genome-wide changes in Esrrb knockdown (view larger)</a></div>
+		</div> <!-- end image link + caption -->
+		
+		<div class="image_link" style="width: 150px"><a href="javascript:popUp('figure3/figure3.html',550,800)">
+		<img alt="Click for larger image" src="figure3_thumb.png" height="208" width="150" /></a>
+		<div><A HREF="javascript:popUp('figure3/figure3.html',550,800)">
+		Figure 3. Downregulation of Esrrb affects the pluripotent landscape (view larger)</a></div>
+		</div> <!-- end image link + caption -->
+		
+		
+
+		<!-- #EndEditable "content" --></div>
+	<!-- End Content -->
+	<!-- Begin Footer -->
+	<div id="footer">
+		<p><a href="../index.html">Home</a> | 
+		<a href="../genedatabase/default.html">Relational Database</a> | 
+		<a href="../data/default.html">Datasets</a> 
+		| 
+		<a href="default.html">Figures</a> |
+		<a href="../movies/default.html">Movies</a> | 
+		<a href="../tools/default.html">Tools</a> | 
+		<a href="../laboratories/default.html">Laboratories</a></p>
+	</div>
+	<!-- End Footer --></div>
+<!-- End Container -->
+
+</body>
+
+<!-- #EndTemplate -->
+
+</html>

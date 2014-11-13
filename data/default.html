@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- #BeginTemplate "../master.dwt" -->
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<script language="javascript" type="text/javascript">
+
+<!-- Begin
+function popUp(URL,WIDTH,HEIGHT) {
+day = new Date();
+id = day.getTime();
+//old code
+// eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=WIDTH,height=HEIGHT');");
+//eval("page" + id + " = window.open(URL, '" + id + "', "toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=" + WIDTH",height=" + HEIGHT);");
+// eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=' + WIDTH ',height=' + HEIGHT);");
+eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=1,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=1,width=' + WIDTH + ',height=' + HEIGHT);");
+
+}
+// End -->
+</script>
+
+<script type="text/javascript" src="../javascript/jquery.js"></script>
+<script type="text/javascript" src="../javascript/jcarousellite_1.0.1.js"></script>
+<script type="text/javascript">
+
+/* CLOSED_IMAGE - the image to be displayed when the sublists are closed
+ * OPEN_IMAGE   - the image to be displayed when the sublists are opened
+ */
+CLOSED_IMAGE='../images/plus.png';
+OPEN_IMAGE='../images/minus.png';
+
+/* makeCollapsible - makes a list have collapsible sublists
+ * 
+ * listElement - the element representing the list to make collapsible
+ */
+function makeCollapsible(listElement){
+
+  // removed list item bullets and the sapce they occupy
+  listElement.style.listStyle='none';
+  listElement.style.marginLeft='0';
+  listElement.style.paddingLeft='0';
+
+  // loop over all child elements of the list
+  var child=listElement.firstChild;
+  while (child!=null){
+
+    // only process li elements (and not text elements)
+    if (child.nodeType==1){
+
+      // build a list of child ol and ul elements and hide them
+      var list=new Array();
+      var grandchild=child.firstChild;
+      while (grandchild!=null){
+        if (grandchild.tagName=='OL' || grandchild.tagName=='UL'){
+          grandchild.style.display='none';
+          list.push(grandchild);
+        }
+        grandchild=grandchild.nextSibling;
+      }
+
+      // add toggle buttons
+//    var node=document.createElement('img');
+//    node.setAttribute('src',CLOSED_IMAGE);
+//    node.setAttribute('class','collapsibleClosed');
+//     node.onclick=createToggleFunction(node,list);
+//     child.insertBefore(node,child.firstChild);
+       var node=listElement;
+   //    node.setAttribute('src',CLOSED_IMAGE);
+      node.setAttribute('class','collapsibleClosed');
+      node.onclick=createToggleFunction(node,list);
+ //     child.insertBefore(node,child.firstChild);
+
+
+    }
+
+    child=child.nextSibling;
+  }
+
+}
+
+/* createToggleFunction - returns a function that toggles the sublist display
+ * 
+ * toggleElement  - the element representing the toggle gadget
+ * sublistElement - an array of elements representing the sublists that should
+ *                  be opened or closed when the toggle gadget is clicked
+ */
+function createToggleFunction(toggleElement,sublistElements){
+
+  return function(){
+
+    // toggle status of toggle gadget
+    if (toggleElement.getAttribute('class')=='collapsibleClosed'){
+      toggleElement.setAttribute('class','collapsibleOpen');
+  //    toggleElement.setAttribute('src',OPEN_IMAGE);
+    }else{
+      toggleElement.setAttribute('class','collapsibleClosed');
+ //     toggleElement.setAttribute('src',CLOSED_IMAGE);
+    }
+
+    // toggle display of sublists
+    for (var i=0;i<sublistElements.length;i++){
+      sublistElements[i].style.display=
+          (sublistElements[i].style.display=='block')?'none':'block';
+    }
+
+  }
+
+}
+
+</script>
+<!-- #BeginEditable "doctitle" -->
+<title>Data</title>
+
+<style type="text/css">
+.dataCategories {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.4em;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	color: #000000;
+}
+</style>
+<!-- #EndEditable -->
+
+<!-- <link href="runnertest/include/style.css" rel="stylesheet" type="text/css" /> -->
+<link href="../styles/style2.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body onload="makeCollapsible(document.getElementById('collapse'));">
+
+<!-- Begin Container -->
+<div id="container">
+	<!-- Begin Masthead -->
+	<div id="masthead">
+	</div>
+	<!-- End Masthead -->
+	<!-- Begin Navigation -->
+	<div id="navigation">
+		<ul>
+			<li><a href="../index.html">Abstract</a></li>
+			<li><a href="../relational_database/index.html">Relational Database</a></li>
+			<li><ul>
+			<li><a href="default.html">Supplementary Datasets</a>
+				<ul>
+					<li><a href="MicroArray.html">Transcriptome</a></li>
+					<li><a href="Methylome.html">Methylome</a></li>
+					<li><a href="ChIP-SeqHistone.html">Epigenome</a></li>
+					<li><a href="ChIP-Seq.html">Esrrb ChIP-Seq</a></li>
+					<li><a href="MicroRNA.html">miRNA Expression Profile</a></li>
+					<li><a href="Proteome.html">Nuclear Proteome</a></li>
+					<li><a href="integrated.html">Integrated Data</a></li>
+				</ul>
+			</li></ul></li>
+			<li><ul>
+				<li><a>Figures</a>
+					<ul>
+						<li><a href="../images_gallery/main_figures.html">Main Figures</a></li>
+						<li>
+						<a href="../images_gallery/supplementary_figures.html">Supplementary Figures</a></li>
+					</ul>
+				</li>
+				</ul>
+			</li>
+			<li><a href="../movies/default.html">Movies</a></li>
+			<li><a href="../tools/default.html">Tools</a></li>
+			<li><a href="../laboratories/default.html">Laboratories</a></li>
+		</ul>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+	</div>
+	<!-- End Navigation -->
+	<!-- Begin Content -->
+	<div id="content">
+		<!-- #BeginEditable "content" -->
+		<h2>Data for Download</h2>
+		<p>
+We report data from five molecular regulatory layers at four time points Day0, 1, 3, and 5 after Esrrb knockdown and the subsequence analysis as a result of its integration.
+Specifically, we studied:<br>
+		<p><span class="dataCategories"><a href="MicroArray.html">Transcriptome - mRNA Microarrays</a></span>: contains files related to gene expression microarray data to quantify mRNA abundance (designated as RNA)
+		</p>
+		<p><span class="dataCategories"><a href="Proteome.html">Nuclear Proteome</a></span>: contains files related to protein mass spectrometry data to measure nuclear protein abundance (designated as PRO)
+		</p>
+		<p><span class="dataCategories"><a href="ChIP-SeqHistone.html">Epigenome: Histone ChIP-Seq</a></span>: contains files related to genome wide patterns of H3K4me3 and H3K27me3 and H3 through specific chromatin-immunoprecipitation assay coupled with massive parallel DNA sequencing (Illumina GA IIx and HiSeq 2000 platform) to asses chromatin modifications over time (designated as H3K4me3, H3K27me3 and H3).
+		</p>
+		<p><span class="dataCategories"><a href="Methylome.html">Methylome</a></span>: Contains files related to methylation data using HELP Assay (HpaII tiny fragment Enrichment by Ligation-mediated PCR (Khulan et al., 2006) to study changes in the promoter methylation pattern.
+		</p>
+		<p><span class="dataCategories"><a href="MicroRNA.html">miRNA  Expression Profile</a></span>: contains microRNA expression profile over the time series from two different platforms: miRNA-Seq (Illumina GA IIx and HiSeq 2000 platform) or microRNA array (Exiqon, Denmark)  to explain possible discordances in the mRNA and protein levels related with microRNAs.
+		</p>
+		<p><span class="dataCategories"><a href="ChIP-Seq.html">Esrrb ChIP-Seq</a></span>: contains files with the specific binding sites for Esrrb to elucidate Esrrb direct gene and miRNA targets.
+		</p>
+		<div class="image_link"><A HREF="javascript:popUp('../images/Data_Process.png',1001,602)">
+		<img alt="Click for larger image" height="100" src="../images/Data_Process_thumb.png" width="171" /></a>
+		<div><A HREF="javascript:popUp('../images/Data_Process.png',1001,602)">
+Data Process Flowchart (view larger)</a></div>
+		</div> <!-- end image link + caption -->
+		<!-- #EndEditable "content" --></div>
+	<!-- End Content -->
+	<!-- Begin Footer -->
+	<div id="footer">
+		<p><a href="../index.html">Abstract</a> | 
+		<a href="../relational_database/index.html">Relational Database</a> | 
+		<a href="default.html">Datasets</a> 
+		| 
+		<a href="../images_gallery/main_figures.html">Main Figures</a> |
+		<a href="../movies/default.html">Movies</a> | 
+		<a href="../tools/default.html">Tools</a> | 
+		<a href="../laboratories/default.html">Laboratories</a></p>
+	</div>
+	<!-- End Footer --></div>
+<!-- End Container -->
+
+</body>
+
+<!-- #EndTemplate -->
+
+</html>

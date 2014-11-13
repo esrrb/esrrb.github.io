@@ -1,0 +1,332 @@
+<html {$html_attrs}>
+<head>
+<title>Tbl Name</title>
+<link REL="stylesheet" href="include/style.css" type="text/css">
+<!--[if IE]>
+<link REL="stylesheet" href="include/styleIE.css" type="text/css">
+<![endif]-->
+<style>
+.grid_block {  
+margin-top:5px;
+border-collapse: collapse;
+align:center;
+width:95%;
+border:none;
+} 
+.grid_block td { 
+ padding: 5px; 
+ margin: 0px; 
+ border: solid black 1px;
+}
+.grid_block .gridspacing {width:20px;border-top-color:white; border-bottom-color:white;background-color:white}
+@media print 
+{
+	a.pdf {display:none}
+}
+.printpage {page-break-after:always}
+#selpage{margin-left:30px;}
+</style> 
+</head>
+<body style="background-color:white">
+{BEGIN body}
+{$header}
+{BEGIN page}
+
+<h1>Tbl Name</h1>
+{BEGIN page_number}
+<div id='selpage'>Page {$pageno} of {$maxpages} </div>
+{END page_number}
+
+{BEGIN grid_block}
+
+<table align="center" cellpadding=5 class="grid_block">
+{BEGIN grid_header}
+<tr>
+{BEGIN record_header}
+{BEGIN Name_fieldheadercolumn}
+	<td>
+{BEGIN Name_fieldheader}
+	<b>Name</b>
+{END Name_fieldheader}
+	</td>
+{END Name_fieldheadercolumn}
+{BEGIN Esrrb_Chip_fieldheadercolumn}
+	<td>
+{BEGIN Esrrb_Chip_fieldheader}
+	<b>Esrrb-Chip</b>
+{END Esrrb_Chip_fieldheader}
+	</td>
+{END Esrrb_Chip_fieldheadercolumn}
+{BEGIN E_0_fieldheadercolumn}
+	<td>
+{BEGIN E_0_fieldheader}
+	<b>E-0</b>
+{END E_0_fieldheader}
+	</td>
+{END E_0_fieldheadercolumn}
+{BEGIN E_1_fieldheadercolumn}
+	<td>
+{BEGIN E_1_fieldheader}
+	<b>E-1</b>
+{END E_1_fieldheader}
+	</td>
+{END E_1_fieldheadercolumn}
+{BEGIN E_3_fieldheadercolumn}
+	<td>
+{BEGIN E_3_fieldheader}
+	<b>E-3</b>
+{END E_3_fieldheader}
+	</td>
+{END E_3_fieldheadercolumn}
+{BEGIN E_5_fieldheadercolumn}
+	<td>
+{BEGIN E_5_fieldheader}
+	<b>E-5</b>
+{END E_5_fieldheader}
+	</td>
+{END E_5_fieldheadercolumn}
+{BEGIN P_0_fieldheadercolumn}
+	<td>
+{BEGIN P_0_fieldheader}
+	<b>P-0</b>
+{END P_0_fieldheader}
+	</td>
+{END P_0_fieldheadercolumn}
+{BEGIN P_1_fieldheadercolumn}
+	<td>
+{BEGIN P_1_fieldheader}
+	<b>P-1</b>
+{END P_1_fieldheader}
+	</td>
+{END P_1_fieldheadercolumn}
+{BEGIN P_3_fieldheadercolumn}
+	<td>
+{BEGIN P_3_fieldheader}
+	<b>P-3</b>
+{END P_3_fieldheader}
+	</td>
+{END P_3_fieldheadercolumn}
+{BEGIN P_5_fieldheadercolumn}
+	<td>
+{BEGIN P_5_fieldheader}
+	<b>P-5</b>
+{END P_5_fieldheader}
+	</td>
+{END P_5_fieldheadercolumn}
+{BEGIN M_0_fieldheadercolumn}
+	<td>
+{BEGIN M_0_fieldheader}
+	<b>M-0</b>
+{END M_0_fieldheader}
+	</td>
+{END M_0_fieldheadercolumn}
+{BEGIN M_1_fieldheadercolumn}
+	<td>
+{BEGIN M_1_fieldheader}
+	<b>M-1</b>
+{END M_1_fieldheader}
+	</td>
+{END M_1_fieldheadercolumn}
+{BEGIN M_3_fieldheadercolumn}
+	<td>
+{BEGIN M_3_fieldheader}
+	<b>M-3</b>
+{END M_3_fieldheader}
+	</td>
+{END M_3_fieldheadercolumn}
+{BEGIN M_5_fieldheadercolumn}
+	<td>
+{BEGIN M_5_fieldheader}
+	<b>M-5</b>
+{END M_5_fieldheader}
+	</td>
+{END M_5_fieldheadercolumn}
+{BEGIN K4_0_fieldheadercolumn}
+	<td>
+{BEGIN K4_0_fieldheader}
+	<b>K4-0</b>
+{END K4_0_fieldheader}
+	</td>
+{END K4_0_fieldheadercolumn}
+{BEGIN K4_1_fieldheadercolumn}
+	<td>
+{BEGIN K4_1_fieldheader}
+	<b>K4-1</b>
+{END K4_1_fieldheader}
+	</td>
+{END K4_1_fieldheadercolumn}
+{BEGIN K4_3_fieldheadercolumn}
+	<td>
+{BEGIN K4_3_fieldheader}
+	<b>K4-3</b>
+{END K4_3_fieldheader}
+	</td>
+{END K4_3_fieldheadercolumn}
+{BEGIN K4_5_fieldheadercolumn}
+	<td>
+{BEGIN K4_5_fieldheader}
+	<b>K4-5</b>
+{END K4_5_fieldheader}
+	</td>
+{END K4_5_fieldheadercolumn}
+{BEGIN K27_0_fieldheadercolumn}
+	<td>
+{BEGIN K27_0_fieldheader}
+	<b>K27-0</b>
+{END K27_0_fieldheader}
+	</td>
+{END K27_0_fieldheadercolumn}
+{BEGIN K27_1_fieldheadercolumn}
+	<td>
+{BEGIN K27_1_fieldheader}
+	<b>K27-1</b>
+{END K27_1_fieldheader}
+	</td>
+{END K27_1_fieldheadercolumn}
+{BEGIN K27_3_fieldheadercolumn}
+	<td>
+{BEGIN K27_3_fieldheader}
+	<b>K27-3</b>
+{END K27_3_fieldheader}
+	</td>
+{END K27_3_fieldheadercolumn}
+{BEGIN K27_5_fieldheadercolumn}
+	<td>
+{BEGIN K27_5_fieldheader}
+	<b>K27-5</b>
+{END K27_5_fieldheader}
+	</td>
+{END K27_5_fieldheadercolumn}
+{BEGIN endrecordheader_block}
+	<td class="gridspacing">&nbsp;</td>
+{END endrecordheader_block}
+{END record_header}
+</tr>
+{END grid_header}
+{BEGIN grid_row}
+<tr valign=top {$rowstyle} {$rowattrs}>
+{BEGIN grid_record}
+{BEGIN Name_fieldcolumn}
+<td {$Name_style}>
+{$Name_value}
+</td>
+{END Name_fieldcolumn}
+{BEGIN Esrrb_Chip_fieldcolumn}
+<td {$Esrrb_Chip_style}>
+{$Esrrb_Chip_value}
+</td>
+{END Esrrb_Chip_fieldcolumn}
+{BEGIN E_0_fieldcolumn}
+<td {$E_0_style}>
+{$E_0_value}
+</td>
+{END E_0_fieldcolumn}
+{BEGIN E_1_fieldcolumn}
+<td {$E_1_style}>
+{$E_1_value}
+</td>
+{END E_1_fieldcolumn}
+{BEGIN E_3_fieldcolumn}
+<td {$E_3_style}>
+{$E_3_value}
+</td>
+{END E_3_fieldcolumn}
+{BEGIN E_5_fieldcolumn}
+<td {$E_5_style}>
+{$E_5_value}
+</td>
+{END E_5_fieldcolumn}
+{BEGIN P_0_fieldcolumn}
+<td {$P_0_style}>
+{$P_0_value}
+</td>
+{END P_0_fieldcolumn}
+{BEGIN P_1_fieldcolumn}
+<td {$P_1_style}>
+{$P_1_value}
+</td>
+{END P_1_fieldcolumn}
+{BEGIN P_3_fieldcolumn}
+<td {$P_3_style}>
+{$P_3_value}
+</td>
+{END P_3_fieldcolumn}
+{BEGIN P_5_fieldcolumn}
+<td {$P_5_style}>
+{$P_5_value}
+</td>
+{END P_5_fieldcolumn}
+{BEGIN M_0_fieldcolumn}
+<td {$M_0_style}>
+{$M_0_value}
+</td>
+{END M_0_fieldcolumn}
+{BEGIN M_1_fieldcolumn}
+<td {$M_1_style}>
+{$M_1_value}
+</td>
+{END M_1_fieldcolumn}
+{BEGIN M_3_fieldcolumn}
+<td {$M_3_style}>
+{$M_3_value}
+</td>
+{END M_3_fieldcolumn}
+{BEGIN M_5_fieldcolumn}
+<td {$M_5_style}>
+{$M_5_value}
+</td>
+{END M_5_fieldcolumn}
+{BEGIN K4_0_fieldcolumn}
+<td {$K4_0_style}>
+{$K4_0_value}
+</td>
+{END K4_0_fieldcolumn}
+{BEGIN K4_1_fieldcolumn}
+<td {$K4_1_style}>
+{$K4_1_value}
+</td>
+{END K4_1_fieldcolumn}
+{BEGIN K4_3_fieldcolumn}
+<td {$K4_3_style}>
+{$K4_3_value}
+</td>
+{END K4_3_fieldcolumn}
+{BEGIN K4_5_fieldcolumn}
+<td {$K4_5_style}>
+{$K4_5_value}
+</td>
+{END K4_5_fieldcolumn}
+{BEGIN K27_0_fieldcolumn}
+<td {$K27_0_style}>
+{$K27_0_value}
+</td>
+{END K27_0_fieldcolumn}
+{BEGIN K27_1_fieldcolumn}
+<td {$K27_1_style}>
+{$K27_1_value}
+</td>
+{END K27_1_fieldcolumn}
+{BEGIN K27_3_fieldcolumn}
+<td {$K27_3_style}>
+{$K27_3_value}
+</td>
+{END K27_3_fieldcolumn}
+{BEGIN K27_5_fieldcolumn}
+<td {$K27_5_style}>
+{$K27_5_value}
+</td>
+{END K27_5_fieldcolumn}
+{BEGIN endrecord_block}
+<td class="gridspacing">&nbsp;</td>
+{END endrecord_block}
+{END grid_record}
+</tr>
+{END grid_row}
+<!-- totals row -->
+</table>
+{END grid_block}
+{END page}
+{$footer}
+{END body}
+</body>
+</html>

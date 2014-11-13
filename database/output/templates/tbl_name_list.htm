@@ -1,0 +1,612 @@
+<html {$html_attrs}>
+<head>
+<title>Tbl Name</title>
+<link REL="stylesheet" href="include/style.css" type="text/css">
+<!--[if IE]>
+<link REL="stylesheet" href="include/styleIE.css" type="text/css">
+<![endif]-->
+{BEGIN style_block}
+<style>
+#height100{$id} {padding:10px;}
+#mastertable_block{$id} {margin-left:50px;margin-top:10px}
+#search_records_block{$id} 
+{
+	vertical-align:middle;
+	text-align: right;
+	padding: 9px;
+	display: table;
+	width: 99%;
+	{BEGIN RTL_block}
+	margin-top:27px;
+	{END RTL_block}
+}
+#search_records_block{$id} > * {vertical-align:middle;}
+
+#toplinks_block{$id} {padding:10px; margin-bottom:3px;}
+#login_block_right{$id} {text-align:right;padding-left:30px;}
+#login_block_left{$id} {text-align:left;}
+#login_block_left{$id} * {margin-left:5px;}
+#menu_block{$id} {{BEGIN LTR_block}margin-left:10px;{END LTR_block}{BEGIN RTL_block}float:right;margin-right:10px;{END RTL_block}}
+#recordcontrols_block{$id} {padding:10px 10px;text-align:center;vertical-align:middle;}
+#record_controls{$id} > *,#newrecord_controls{$id} > * {margin:2px 2px;vertical-align:middle}
+#grid_block{$id} {margin-top:2px;}
+#linebody{$id} {height:10px;}
+.message_block {text-align:center;padding:5px}
+.grid_recordheader {padding-top:5px;}
+.grid_recordheader a {margin:0 5px;}
+form#frmAdmin{$id} {display:inline;}
+#aftermenu{$id} {clear:left;height:1px;overflow:hidden}
+body{margin:0px;padding:0px;}
+#searchOptions{$id}{
+	margin-right: 10px;
+	padding-bottom: 18px;
+}
+#searchform{$id}{
+	float: left;
+}
+#searchPanelContainer{$id}{
+	width: 200px;
+	display: block; 
+	position:absolute;
+}
+.listIcons img.listIcon{margin:0 3px;opacity:0.3;filter:alpha(opacity=30);}
+/*report styles*/
+#export_links{$id} * {padding:0}
+</style>
+{END style_block}
+<!--[if IE]>
+{BEGIN iestyle_block}
+<style>
+	.grid {height:100%;}
+</style>
+{END iestyle_block}
+<![endif]-->
+
+</head>
+<body marginheight=0 marginwidth=0 {$bodyattrs}>
+{BEGIN body}
+{$header}
+<div id="height100{$id}">
+
+{BEGIN toplinks_block}
+<div id="toplinks_block{$id}">
+
+<span id="login_block_left{$id}">
+	</span>
+
+<span id="login_block_right{$id}">
+{BEGIN asearch_link}
+	<a href="tbl_name_search.php" {$advsearchlink_attrs}>Advanced search</a>	
+{END asearch_link}
+
+{BEGIN export_link}
+<span>
+	&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+	<a target="_blank" href="tbl_name_export.php" {$exportlink_attrs}>Export results</a>
+</span>
+{END export_link}
+
+{BEGIN print_link}
+<span>
+	&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+	<a target="_blank" href="tbl_name_print.php" {$printlink_attrs}>
+				Print this page
+	</a>
+</span>
+{END print_link}
+{BEGIN printall_link}
+<span>
+	&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+	<a target="_blank" href="tbl_name_print.php?all=1" {$printalllink_attrs}>
+				Print all pages
+	</a>
+</span>
+{END printall_link}
+
+
+
+<!--language-->
+</span>
+</div>
+{END toplinks_block}
+
+<!-- MenuBegin -->
+
+<!-- MenuEnd -->
+
+<div id="aftermenu{$id}"></div>
+
+{BEGIN search_records_block}
+<div id="search_records_block{$id}" class="main_table_border_P">
+		{BEGIN searchform}
+		<!-- Search panel header for horizontal layouts -->
+		<span id="searchform{$id}" align="absmiddle">
+	<span id="searchPanelHeader{$id}">  
+		{$simpleSearchFieldCombo}
+		
+		{$simpleSearchTypeCombo}
+		
+		{BEGIN searchform_text}
+		<input type="text" {$searchfor_attrs} size="25">
+		{END searchform_text}
+		&nbsp;
+		{BEGIN searchform_search}
+			<span class="buttonborder"><input class="button" type="button" style="width: 18px; background-image: url(images/search/search.gif);" {$searchbutton_attrs} ></span>
+		{END searchform_search}
+		&nbsp;
+		{BEGIN searchform_showall}	
+		<span id="showall{$id}" class="buttonborder" {$showAllCont_attrs}><input type="button" class="button" value="Show all" {$showallbutton_attrs}></span>
+		{END searchform_showall}
+	</span>
+	{BEGIN searchPanelTopButtons}
+	<span>
+		&nbsp;
+		<span class="buttonborder"><input class="button" type="button" id="showSrchWin{$id}" style="width: 18px; background-image: url(images/search/showWindowPin.gif);" {$showHideSearchWin_attrs} ></span>
+		&nbsp;		
+		<span class="buttonborder"><input class="button" type="button" id="showOptPanel{$id}" style="width: 18px; background-image: url(images/search/showOptions.gif);" {$showHideSearchPanel_attrs} ></span>
+	</span>
+	{END searchPanelTopButtons}
+</span>
+	{END searchform}
+	&nbsp;&nbsp;&nbsp;
+
+	<span>
+		{BEGIN details_block}
+		<span {$details_attrs}>Details found: <b>{$records_found}</b>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+	{END details_block}
+	
+	{BEGIN pages_block}
+		<span {$pages_attrs}>Page <b>{$page}</b> of <b>{$maxpages}</b></span>
+	{END pages_block}
+
+		&nbsp;&nbsp;&nbsp;&nbsp;
+	
+	{BEGIN recordspp_block}
+			{$recsPerPage}
+	{END recordspp_block}
+	</span>
+</div>
+{END search_records_block}
+
+<!-- search panel and window -->
+<div id="searchPanelContainer{$id}" class="searchPanelContainer">
+	{$adv_search_panel}
+</div>
+&nbsp;
+<div moveForSearch="move{$id}" {$marginStyle}>
+<table class="tableborder" {$gridTable_attrs} cellspacing=0 cellpadding=0 ><tr><td class="tableborder1">
+{BEGIN recordcontrols_block}
+<div id="recordcontrols_block{$id}" class="body2">
+{BEGIN record_controls}
+<span id="record_controls{$id}">
+
+
+
+{BEGIN exportselected_link}
+<span class=buttonborder {$exportselectedlink_span}><input type=button class="button" value="Export selected" {$exportselectedlink_attrs}></span>
+{END exportselected_link}
+
+{BEGIN printselected_link}
+<span class=buttonborder {$printselectedlink_span}><input type=button class="button" value="Print selected" {$printselectedlink_attrs}></span>
+{END printselected_link}
+</span>
+{END record_controls}
+</div>
+{END recordcontrols_block}
+<div class="message" id="usermessage{$id}">{$user_message}</div>
+
+
+
+{BEGIN grid_block}
+<div id="grid_block{$id}">
+<table name="maintable" class="data" align="center" width="100%" border="0" cellpadding=3 cellspacing=0>
+{BEGIN grid_header}
+<thead>
+<tr class="blackshade" valign="top" {$gridHeader_attrs}>
+{BEGIN record_header}
+
+{BEGIN listIcons_column}
+	<th align="center" class="headerlist" {$widthListIcons} nowrap="nowrap">&nbsp;</th>
+{END listIcons_column}
+
+{BEGIN checkbox_column}
+<th width="20" align="center" class="headerlist">
+<input type="checkbox" {$checkboxheader_attrs}>
+</th>
+{END checkbox_column}
+
+
+{BEGIN Name_fieldheadercolumn}
+<th class="headerlist" align="center">
+{BEGIN Name_fieldheader}&nbsp;
+<a class="tablelinks" 
+{$Name_orderlinkattrs}>
+Name</a>
+&nbsp;
+{END Name_fieldheader}
+</th>
+{END Name_fieldheadercolumn}
+{BEGIN Esrrb_Chip_fieldheadercolumn}
+<th class="headerlist" align="center">
+{BEGIN Esrrb_Chip_fieldheader}&nbsp;
+<a class="tablelinks" 
+{$Esrrb_Chip_orderlinkattrs}>
+Esrrb-Chip</a>
+&nbsp;
+{END Esrrb_Chip_fieldheader}
+</th>
+{END Esrrb_Chip_fieldheadercolumn}
+{BEGIN E_0_fieldheadercolumn}
+<th class="headerlist" align="center">
+{BEGIN E_0_fieldheader}&nbsp;
+<a class="tablelinks" 
+{$E_0_orderlinkattrs}>
+E-0</a>
+&nbsp;
+{END E_0_fieldheader}
+</th>
+{END E_0_fieldheadercolumn}
+{BEGIN E_1_fieldheadercolumn}
+<th class="headerlist" align="center">
+{BEGIN E_1_fieldheader}&nbsp;
+<a class="tablelinks" 
+{$E_1_orderlinkattrs}>
+E-1</a>
+&nbsp;
+{END E_1_fieldheader}
+</th>
+{END E_1_fieldheadercolumn}
+{BEGIN E_3_fieldheadercolumn}
+<th class="headerlist" align="center">
+{BEGIN E_3_fieldheader}&nbsp;
+<a class="tablelinks" 
+{$E_3_orderlinkattrs}>
+E-3</a>
+&nbsp;
+{END E_3_fieldheader}
+</th>
+{END E_3_fieldheadercolumn}
+{BEGIN E_5_fieldheadercolumn}
+<th class="headerlist" align="center">
+{BEGIN E_5_fieldheader}&nbsp;
+<a class="tablelinks" 
+{$E_5_orderlinkattrs}>
+E-5</a>
+&nbsp;
+{END E_5_fieldheader}
+</th>
+{END E_5_fieldheadercolumn}
+{BEGIN P_0_fieldheadercolumn}
+<th class="headerlist" align="center">
+{BEGIN P_0_fieldheader}&nbsp;
+<a class="tablelinks" 
+{$P_0_orderlinkattrs}>
+P-0</a>
+&nbsp;
+{END P_0_fieldheader}
+</th>
+{END P_0_fieldheadercolumn}
+{BEGIN P_1_fieldheadercolumn}
+<th class="headerlist" align="center">
+{BEGIN P_1_fieldheader}&nbsp;
+<a class="tablelinks" 
+{$P_1_orderlinkattrs}>
+P-1</a>
+&nbsp;
+{END P_1_fieldheader}
+</th>
+{END P_1_fieldheadercolumn}
+{BEGIN P_3_fieldheadercolumn}
+<th class="headerlist" align="center">
+{BEGIN P_3_fieldheader}&nbsp;
+<a class="tablelinks" 
+{$P_3_orderlinkattrs}>
+P-3</a>
+&nbsp;
+{END P_3_fieldheader}
+</th>
+{END P_3_fieldheadercolumn}
+{BEGIN P_5_fieldheadercolumn}
+<th class="headerlist" align="center">
+{BEGIN P_5_fieldheader}&nbsp;
+<a class="tablelinks" 
+{$P_5_orderlinkattrs}>
+P-5</a>
+&nbsp;
+{END P_5_fieldheader}
+</th>
+{END P_5_fieldheadercolumn}
+{BEGIN M_0_fieldheadercolumn}
+<th class="headerlist" align="center">
+{BEGIN M_0_fieldheader}&nbsp;
+<a class="tablelinks" 
+{$M_0_orderlinkattrs}>
+M-0</a>
+&nbsp;
+{END M_0_fieldheader}
+</th>
+{END M_0_fieldheadercolumn}
+{BEGIN M_1_fieldheadercolumn}
+<th class="headerlist" align="center">
+{BEGIN M_1_fieldheader}&nbsp;
+<a class="tablelinks" 
+{$M_1_orderlinkattrs}>
+M-1</a>
+&nbsp;
+{END M_1_fieldheader}
+</th>
+{END M_1_fieldheadercolumn}
+{BEGIN M_3_fieldheadercolumn}
+<th class="headerlist" align="center">
+{BEGIN M_3_fieldheader}&nbsp;
+<a class="tablelinks" 
+{$M_3_orderlinkattrs}>
+M-3</a>
+&nbsp;
+{END M_3_fieldheader}
+</th>
+{END M_3_fieldheadercolumn}
+{BEGIN M_5_fieldheadercolumn}
+<th class="headerlist" align="center">
+{BEGIN M_5_fieldheader}&nbsp;
+<a class="tablelinks" 
+{$M_5_orderlinkattrs}>
+M-5</a>
+&nbsp;
+{END M_5_fieldheader}
+</th>
+{END M_5_fieldheadercolumn}
+{BEGIN K4_0_fieldheadercolumn}
+<th class="headerlist" align="center">
+{BEGIN K4_0_fieldheader}&nbsp;
+<a class="tablelinks" 
+{$K4_0_orderlinkattrs}>
+K4-0</a>
+&nbsp;
+{END K4_0_fieldheader}
+</th>
+{END K4_0_fieldheadercolumn}
+{BEGIN K4_1_fieldheadercolumn}
+<th class="headerlist" align="center">
+{BEGIN K4_1_fieldheader}&nbsp;
+<a class="tablelinks" 
+{$K4_1_orderlinkattrs}>
+K4-1</a>
+&nbsp;
+{END K4_1_fieldheader}
+</th>
+{END K4_1_fieldheadercolumn}
+{BEGIN K4_3_fieldheadercolumn}
+<th class="headerlist" align="center">
+{BEGIN K4_3_fieldheader}&nbsp;
+<a class="tablelinks" 
+{$K4_3_orderlinkattrs}>
+K4-3</a>
+&nbsp;
+{END K4_3_fieldheader}
+</th>
+{END K4_3_fieldheadercolumn}
+{BEGIN K4_5_fieldheadercolumn}
+<th class="headerlist" align="center">
+{BEGIN K4_5_fieldheader}&nbsp;
+<a class="tablelinks" 
+{$K4_5_orderlinkattrs}>
+K4-5</a>
+&nbsp;
+{END K4_5_fieldheader}
+</th>
+{END K4_5_fieldheadercolumn}
+{BEGIN K27_0_fieldheadercolumn}
+<th class="headerlist" align="center">
+{BEGIN K27_0_fieldheader}&nbsp;
+<a class="tablelinks" 
+{$K27_0_orderlinkattrs}>
+K27-0</a>
+&nbsp;
+{END K27_0_fieldheader}
+</th>
+{END K27_0_fieldheadercolumn}
+{BEGIN K27_1_fieldheadercolumn}
+<th class="headerlist" align="center">
+{BEGIN K27_1_fieldheader}&nbsp;
+<a class="tablelinks" 
+{$K27_1_orderlinkattrs}>
+K27-1</a>
+&nbsp;
+{END K27_1_fieldheader}
+</th>
+{END K27_1_fieldheadercolumn}
+{BEGIN K27_3_fieldheadercolumn}
+<th class="headerlist" align="center">
+{BEGIN K27_3_fieldheader}&nbsp;
+<a class="tablelinks" 
+{$K27_3_orderlinkattrs}>
+K27-3</a>
+&nbsp;
+{END K27_3_fieldheader}
+</th>
+{END K27_3_fieldheadercolumn}
+{BEGIN K27_5_fieldheadercolumn}
+<th class="headerlist" align="center">
+{BEGIN K27_5_fieldheader}&nbsp;
+<a class="tablelinks" 
+{$K27_5_orderlinkattrs}>
+K27-5</a>
+&nbsp;
+{END K27_5_fieldheader}
+</th>
+{END K27_5_fieldheadercolumn}
+{BEGIN endrecordheader_block}
+<th class="body2"></th>
+{END endrecordheader_block}
+{END record_header}
+</tr>
+</thead>
+{END grid_header}
+
+<tbody>
+{BEGIN grid_row}
+<tr valign="top" {$rowstyle} {$rowattrs}> 
+{BEGIN grid_record}
+
+{BEGIN listIcons_column}
+	<td align="center" valign="middle" iEditCont="all" class="borderbody listIcons" nowrap="nowrap">
+	
+	
+	
+		{BEGIN view_column}
+	{BEGIN view_link}
+	<a class="tablelinks" {$viewlink_attrs} title="View"><img class="listIcon" src="images/icon_view_new.gif" align="middle" alt="View" border="0"></a>
+	{END view_link}
+	{END view_column}
+	</td>
+{END listIcons_column}	
+
+{BEGIN checkbox_column}
+<td align="center" valign="middle" class="borderbody" width="20">
+{BEGIN checkbox}
+<input type="checkbox" {$checkbox_attrs}>
+{END checkbox}
+</td>
+{END checkbox_column}
+
+
+{BEGIN Name_fieldcolumn}
+<td valign=middle class=borderbody {$Name_style}>
+{$Name_value}
+</td>
+{END Name_fieldcolumn}
+{BEGIN Esrrb_Chip_fieldcolumn}
+<td valign=middle class=borderbody {$Esrrb_Chip_style}>
+{$Esrrb_Chip_value}
+</td>
+{END Esrrb_Chip_fieldcolumn}
+{BEGIN E_0_fieldcolumn}
+<td valign=middle class=borderbody {$E_0_style}>
+{$E_0_value}
+</td>
+{END E_0_fieldcolumn}
+{BEGIN E_1_fieldcolumn}
+<td valign=middle class=borderbody {$E_1_style}>
+{$E_1_value}
+</td>
+{END E_1_fieldcolumn}
+{BEGIN E_3_fieldcolumn}
+<td valign=middle class=borderbody {$E_3_style}>
+{$E_3_value}
+</td>
+{END E_3_fieldcolumn}
+{BEGIN E_5_fieldcolumn}
+<td valign=middle class=borderbody {$E_5_style}>
+{$E_5_value}
+</td>
+{END E_5_fieldcolumn}
+{BEGIN P_0_fieldcolumn}
+<td valign=middle class=borderbody {$P_0_style}>
+{$P_0_value}
+</td>
+{END P_0_fieldcolumn}
+{BEGIN P_1_fieldcolumn}
+<td valign=middle class=borderbody {$P_1_style}>
+{$P_1_value}
+</td>
+{END P_1_fieldcolumn}
+{BEGIN P_3_fieldcolumn}
+<td valign=middle class=borderbody {$P_3_style}>
+{$P_3_value}
+</td>
+{END P_3_fieldcolumn}
+{BEGIN P_5_fieldcolumn}
+<td valign=middle class=borderbody {$P_5_style}>
+{$P_5_value}
+</td>
+{END P_5_fieldcolumn}
+{BEGIN M_0_fieldcolumn}
+<td valign=middle class=borderbody {$M_0_style}>
+{$M_0_value}
+</td>
+{END M_0_fieldcolumn}
+{BEGIN M_1_fieldcolumn}
+<td valign=middle class=borderbody {$M_1_style}>
+{$M_1_value}
+</td>
+{END M_1_fieldcolumn}
+{BEGIN M_3_fieldcolumn}
+<td valign=middle class=borderbody {$M_3_style}>
+{$M_3_value}
+</td>
+{END M_3_fieldcolumn}
+{BEGIN M_5_fieldcolumn}
+<td valign=middle class=borderbody {$M_5_style}>
+{$M_5_value}
+</td>
+{END M_5_fieldcolumn}
+{BEGIN K4_0_fieldcolumn}
+<td valign=middle class=borderbody {$K4_0_style}>
+{$K4_0_value}
+</td>
+{END K4_0_fieldcolumn}
+{BEGIN K4_1_fieldcolumn}
+<td valign=middle class=borderbody {$K4_1_style}>
+{$K4_1_value}
+</td>
+{END K4_1_fieldcolumn}
+{BEGIN K4_3_fieldcolumn}
+<td valign=middle class=borderbody {$K4_3_style}>
+{$K4_3_value}
+</td>
+{END K4_3_fieldcolumn}
+{BEGIN K4_5_fieldcolumn}
+<td valign=middle class=borderbody {$K4_5_style}>
+{$K4_5_value}
+</td>
+{END K4_5_fieldcolumn}
+{BEGIN K27_0_fieldcolumn}
+<td valign=middle class=borderbody {$K27_0_style}>
+{$K27_0_value}
+</td>
+{END K27_0_fieldcolumn}
+{BEGIN K27_1_fieldcolumn}
+<td valign=middle class=borderbody {$K27_1_style}>
+{$K27_1_value}
+</td>
+{END K27_1_fieldcolumn}
+{BEGIN K27_3_fieldcolumn}
+<td valign=middle class=borderbody {$K27_3_style}>
+{$K27_3_value}
+</td>
+{END K27_3_fieldcolumn}
+{BEGIN K27_5_fieldcolumn}
+<td valign=middle class=borderbody {$K27_5_style}>
+{$K27_5_value}
+</td>
+{END K27_5_fieldcolumn}
+
+{BEGIN endrecord_block}
+<td class="body2" {$endrecordblock_attrs}></td>
+{END endrecord_block}
+{END grid_record}
+</tr>
+{END grid_row}
+</tbody>
+
+</table> 
+</div>
+{END grid_block}
+ 
+
+
+{BEGIN pagination_block}
+<div id="pagination_block{$id}" class="toplist message_block main_table_border_P">{$pagination}</div>
+{END pagination_block}
+
+{BEGIN message_block}
+<div id="message_block{$id}" class="toplist message_block main_table_border_P"><b>{$message}</b></div>
+{END message_block}
+</td></tr></table>
+</div>
+</div>
+{$footer}
+{END body}
+</body>
+</html>

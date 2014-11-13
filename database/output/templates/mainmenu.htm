@@ -1,0 +1,76 @@
+{BEGIN mainmenu_block}
+{BEGIN mainmenustyle_block}
+<style class="Vmenu">
+#mainmenu_block IMG, #mainmenu_block HR
+{
+	vertical-align:middle;
+		{BEGIN RTL_block}
+	margin-left:10px;
+	{END RTL_block}
+	{BEGIN LTR_block}
+	margin-right:10px;
+	{END LTR_block}
+}
+#mainmenu_block img.spacer
+{
+	{BEGIN RTL_block}
+	margin-left:0px;
+	{END RTL_block}
+	{BEGIN LTR_block}
+	margin-right:0px;
+	{END LTR_block}
+}
+#menu_block{$id}, #tables_block{{BEGIN RTL_block}text-align:right;{END RTL_block}} 
+/* For Vmenu1 on the list page */
+#mainmenu_block {width:200px;}
+#menu_block{$id}, #tables_block{padding:10px 0;} 
+{BEGIN RTL_block}
+.Vmenu1 {text-align:right;}
+{END RTL_block}
+.Vmenu1 ul, .Vmenu1 ul li{list-style:none;margin:0;padding:0px;}
+.Vmenu1 ul li {padding:5px 10px;z-index:1;display:block;width:auto;}
+.Vmenu1 ul li ul{display:none;position:absolute;top:0px;z-index:2;}
+.Vmenu1 ul li ul li{white-space:nowrap;}
+</style>
+{END mainmenustyle_block}
+<div id="mainmenu_block" class="Vmenu1">
+
+<ul>
+	{BEGIN item1_menulink}
+	<li id="li1" view="topitem" >
+	{BEGIN tophorizontal_item}
+<table class="menutab1 Paris main_item" >
+	<tr>
+		<td {BEGIN RTL_block}class="{BEGIN item1_notcurrent}un{END item1_notcurrent}select back_img"{END RTL_block}>
+			<div class="menuborder1 menutab2" ve="noedit">
+				<div class="menutab3 menuborder2 {BEGIN item1_notcurrent}menu_unselected{END item1_notcurrent}{BEGIN item1_current}menuitem_active{END item1_current}">
+					<span ve="edit"><a {$item1_menulink_attrs} class="menu_db{BEGIN needcurrent_item}{BEGIN item1_current}2 current{END item1_current}{END needcurrent_item}" >{$item1_title}</a></span>
+				</div>
+			</div>
+			
+		</td>
+		{BEGIN LTR_block}
+		<td class="menutab4"><img alt=" " src="include/img/menu_blue_{BEGIN item1_notcurrent}un{END item1_notcurrent}select.gif" border=0></td>
+		{END LTR_block}
+	</tr>
+</table>
+{END tophorizontal_item}
+{BEGIN topvertical_item}
+{BEGIN needcurrent_item}
+<a {$item1_menulink_attrs} class="menu_db{BEGIN item1_current}2 current{END item1_current}" ><img class="spacer" alt="*" src="images/spacer.gif" border=0>{$item1_title}</a>
+{END needcurrent_item}
+{BEGIN notneedcurrent_item}
+	{BEGIN simplevertical_item}
+	
+	{END simplevertical_item}
+	<a {$item1_menulink_attrs} class='{BEGIN vertical_typemenu}tablelinks{END vertical_typemenu}{BEGIN horizontal_typemenu}menu_db{END horizontal_typemenu} ' ><img class="spacer" alt="*" src="images/spacer.gif" border=0>{$item1_title}</a>
+{END notneedcurrent_item}
+
+
+
+{END topvertical_item}
+	</li>
+	{END item1_menulink}
+</ul>
+</div>
+{END mainmenu_block}

@@ -1,0 +1,278 @@
+<html {$html_attrs}>
+<head><title>Tbl Name</title>
+<link REL="stylesheet" href="include/style.css" type="text/css">
+<!--[if IE]>
+<link REL="stylesheet" href="include/styleIE.css" type="text/css">
+<![endif]-->
+{BEGIN style_block}
+<style>
+#height100{$id} {padding:10px;} 
+#center_block{$id} {width:500px;margin:0 auto;}
+#contents_block{$id} {text-align:center;}
+#header_block{$id} {white-space:nowrap;height:31px;padding-top:5px;text-align:center;}
+#fields_block{$id} {width:100%}
+#fields_block{$id} td.es{padding:4px 10px;}
+#buttons_block{$id} {padding:5px;white-space:nowrap;}
+#required_block{$id} {text-align:left;padding:5px}
+#buttons_block{$id} > * {margin:0 2px}
+a.pdf{float:left;}
+</style>
+{END style_block}
+</head>
+<body>
+{BEGIN body}
+{$header}
+<div id="height100{$id}" align="center">
+
+{BEGIN flybody}
+<table cellpadding="0" cellspacing="0" border="0" align="center" id="center_block{$id}"><tr><td id="header_block{$id}">
+<div id="header_block{$id}" class="upeditmenu">
+Tbl Name, View record [
+Name: {$show_key1}
+]
+</div>
+<table cellpadding="4" cellspacing="0" class="main_table" id="fields_block{$id}" width="100%" border="0" align="center">
+{BEGIN Name_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			Name
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$Name_value}&nbsp;
+		</td>
+	</tr>
+{END Name_fieldblock}
+{BEGIN Esrrb_Chip_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			Esrrb-Chip
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$Esrrb_Chip_value}&nbsp;
+		</td>
+	</tr>
+{END Esrrb_Chip_fieldblock}
+{BEGIN E_0_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			E-0
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$E_0_value}&nbsp;
+		</td>
+	</tr>
+{END E_0_fieldblock}
+{BEGIN E_1_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			E-1
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$E_1_value}&nbsp;
+		</td>
+	</tr>
+{END E_1_fieldblock}
+{BEGIN E_3_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			E-3
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$E_3_value}&nbsp;
+		</td>
+	</tr>
+{END E_3_fieldblock}
+{BEGIN E_5_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			E-5
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$E_5_value}&nbsp;
+		</td>
+	</tr>
+{END E_5_fieldblock}
+{BEGIN P_0_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			P-0
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$P_0_value}&nbsp;
+		</td>
+	</tr>
+{END P_0_fieldblock}
+{BEGIN P_1_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			P-1
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$P_1_value}&nbsp;
+		</td>
+	</tr>
+{END P_1_fieldblock}
+{BEGIN P_3_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			P-3
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$P_3_value}&nbsp;
+		</td>
+	</tr>
+{END P_3_fieldblock}
+{BEGIN P_5_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			P-5
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$P_5_value}&nbsp;
+		</td>
+	</tr>
+{END P_5_fieldblock}
+{BEGIN M_0_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			M-0
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$M_0_value}&nbsp;
+		</td>
+	</tr>
+{END M_0_fieldblock}
+{BEGIN M_1_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			M-1
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$M_1_value}&nbsp;
+		</td>
+	</tr>
+{END M_1_fieldblock}
+{BEGIN M_3_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			M-3
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$M_3_value}&nbsp;
+		</td>
+	</tr>
+{END M_3_fieldblock}
+{BEGIN M_5_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			M-5
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$M_5_value}&nbsp;
+		</td>
+	</tr>
+{END M_5_fieldblock}
+{BEGIN K4_0_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			K4-0
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$K4_0_value}&nbsp;
+		</td>
+	</tr>
+{END K4_0_fieldblock}
+{BEGIN K4_1_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			K4-1
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$K4_1_value}&nbsp;
+		</td>
+	</tr>
+{END K4_1_fieldblock}
+{BEGIN K4_3_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			K4-3
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$K4_3_value}&nbsp;
+		</td>
+	</tr>
+{END K4_3_fieldblock}
+{BEGIN K4_5_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			K4-5
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$K4_5_value}&nbsp;
+		</td>
+	</tr>
+{END K4_5_fieldblock}
+{BEGIN K27_0_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			K27-0
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$K27_0_value}&nbsp;
+		</td>
+	</tr>
+{END K27_0_fieldblock}
+{BEGIN K27_1_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			K27-1
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$K27_1_value}&nbsp;
+		</td>
+	</tr>
+{END K27_1_fieldblock}
+{BEGIN K27_3_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			K27-3
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$K27_3_value}&nbsp;
+		</td>
+	</tr>
+{END K27_3_fieldblock}
+{BEGIN K27_5_fieldblock}
+	<tr>
+		<td class="es editshade_b" width="150">
+			K27-5
+		</td>
+		<td width="250" class="es editshade_lb">
+			{$K27_5_value}&nbsp;
+		</td>
+	</tr>
+{END K27_5_fieldblock}
+</table>
+
+<div class="blackshade2" id="buttons_block{$id}" align=center>
+{BEGIN prev_button}
+ <span class=buttonborder><input class=button type=reset value=" <<< " {$prevbutton_attrs}></span>
+{END prev_button}
+{BEGIN back_button}
+ <span class=buttonborder><input class=button type=reset value="Back to list" {$backbutton_attrs}></span>
+{END back_button}
+{BEGIN next_button}
+ <span class=buttonborder><input class=button type=reset value=" >>> " {$nextbutton_attrs} ></span>
+{END next_button}
+</div>
+</td></tr></table>
+{END flybody}
+</div>
+
+{BEGIN detail_tables}
+{END detail_tables}
+<br><br>
+{$footer}
+{END body}
+</body>
+</html>

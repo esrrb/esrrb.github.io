@@ -1,0 +1,32 @@
+<html {$html_attrs}>
+<head>
+<link REL="stylesheet" href="include/style.css" type="text/css">
+<!--[if IE]>
+<link REL="stylesheet" href="include/styleIE.css" type="text/css">
+<![endif]-->
+<style>
+#center_block {width:35%;margin:0 auto;min-width:300px}
+#contents_block {text-align:left;}
+#header_block {padding:2px 5px 6px;text-align:center;line-height: 1.8}
+#tables_block {width:auto;margin:0;padding:10px;}
+#header_block span {padding-right:10px}
+.captions {padding:6px 15px;}
+</style>
+</head>
+<body>
+{BEGIN body}
+{$header}
+<table align=center id="center_block"><tr><td id="contents_block">
+<div class=upeditmenu id="header_block">
+&nbsp;
+</div>
+<div id="tables_block" class="shade captions">
+<!-- MainMenuBegin -->
+{$mainmenu}
+<!-- MainMenuEnd -->
+</div>
+</td></tr></table>
+{$footer}
+{END body}
+</body>
+</html>

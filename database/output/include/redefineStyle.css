@@ -1,0 +1,66 @@
+.shiny_box_body {
+	background: #ffe0b0;
+	border: solid 1px #e1c47b;
+}
+
+/*Style for tabs on add and edit pages*/
+.yui-skin-sam .yui-navset .yui-content, 
+.yui-skin-sam .yui-navset .yui-content div 
+{background:#fff4d8;}
+
+.yui-skin-sam .yui-navset .yui-nav,
+.yui-skin-sam .yui-navset .yui-navset-top .yui-nav  /* protect nested tabviews from other orientations */
+{
+	border:solid #f19c1b;  /*color between tab list and content */
+    border-width:0 0 2px;
+	zoom:1;
+}
+
+.yui-skin-sam .yui-navset .yui-nav .selected a,
+.yui-skin-sam .yui-navset .yui-nav .selected a:focus, /* no focus effect for selected */
+.yui-skin-sam .yui-navset .yui-nav .selected a:hover  /* no hover effect for selected */
+{background:#f19c1b url(img/tabSelected.gif) repeat-x left top; /* selected tab background */}
+
+.yui-skin-sam .yui-navset .yui-nav a:hover,
+.yui-skin-sam .yui-navset .yui-nav a:focus 
+{background:#d8d8da url(img/tabDefHover.gif) repeat-x left top; /* selected tab background */}
+
+.yui-skin-sam .yui-navset .yui-nav a,
+.yui-skin-sam .yui-navset .yui-navset-top .yui-nav a
+{
+	font-size:11px;
+	border:solid #ffe4a2;
+	border-width:0 1px;
+}
+
+.yui-skin-sam .yui-navset .yui-nav a em,
+.yui-skin-sam .yui-navset .yui-navset-top .yui-nav a em
+{
+	border:solid #ffe4a2;
+	border-width:1px 0 0;
+}
+
+.yui-skin-sam .yui-navset .yui-nav .selected a,
+.yui-skin-sam .yui-navset .yui-nav .selected a em 
+{border-color:#f19c1b;}
+
+.yui-skin-sam .yui-navset .yui-content,
+.yui-skin-sam .yui-navset .yui-navset-top .yui-content {
+    border:1px solid #ffe4a2; /* content border */
+    border-top-color:#f19c1b; /* different border color */
+}
+
+.yui-skin-sam .yui-panel .bd{
+	overflow: auto;
+}
+.yui-calcontainer{
+	float: none;
+}
+
+/*Style for sections on add and edit pages*/
+.sectionFrame
+{
+	border:1px dashed #ffe4a2;
+	padding:2px;
+	margin-top:2px;
+}
